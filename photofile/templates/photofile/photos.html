@@ -1,0 +1,39 @@
+{% extends "photofile/base.html" %}
+
+
+{% block title %}{% endblock title %}
+
+
+{% block body %}
+<h1>we  keep your slice of memories safe here! </h1>
+<div class="form">
+<form action="" method="POST" enctype="multipart/form-data" >
+    {% csrf_token %}
+    <h2>upload your photos here</h2>
+    {{form}}
+
+    
+    <button type="submit" class='btn'>upload</button>
+</form>
+</div>
+    <h2>Uploaded Images</h2>
+<div class="uploaded-images">
+    {% for image in images %}
+        <div class="image-container">
+            <img src="{{ image.images.url }}" alt="Uploaded Image" width="200px">
+            <p>Uploaded at: {{ image.date }}</p>
+        </div>
+    {% empty %}
+        <p>No images uploaded yet.</p>
+    {% endfor %}
+</div>
+
+   
+    
+
+
+
+
+
+
+{% endblock body %}
