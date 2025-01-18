@@ -2,6 +2,21 @@
 
 
 {% block title %}{% endblock title %}
+<style>
+.uploaded-images {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.uploaded-image {
+    margin-left: 20px;
+    border-radius: 10px;
+    /* Optional: Add a shadow for a better visual appearance */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+</style>
 
 
 {% block body %}
@@ -15,17 +30,22 @@
     
     <button type="submit" class='btn'>upload</button>
 </form>
+<a href={% url "logout" %}> Logout</a>
 </div>
     <h2>Uploaded Images</h2>
 <div class="uploaded-images">
-    {% for image in images %}
+    {% if images %}
+     {% for image in images %}
         <div class="image-container">
             <img src="{{ image.images.url }}" alt="Uploaded Image" width="200px">
             <p>Uploaded at: {{ image.date }}</p>
         </div>
-    {% empty %}
+     {%endfor%}
+    {% else %} 
         <p>No images uploaded yet.</p>
-    {% endfor %}
+    {% endif %}
+   
+   
 </div>
 
    

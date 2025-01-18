@@ -2,4 +2,18 @@
 {% load static %}
 
 
-{% block title %}loginpage{% endblock title %}
+{% block title %}{% endblock title %}
+{% block body %}
+
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">submit</button>
+    <p>Dont have account? <a href="{%url "register" %}"> Register</a>
+
+</form>
+{% for message in messages %}
+{{message}}
+
+{% endfor %}
+{% endblock body %}

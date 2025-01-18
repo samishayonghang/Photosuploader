@@ -130,3 +130,17 @@ MEDIA_ROOT=BASE_DIR /'media'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+SITE_DOMAIN='http://127.0.0.1:8000/'
+SITE_NAME='photo system'
+#mail trap email configuration
+EMAIL_BACKEND="django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = 'live.smtp.mailtrap.io'
+EMAIL_HOST_USER = 'api'
+EMAIL_HOST_PASSWORD = 'f32187b2ddcdf27d64ebb54fe9159cb5'
+EMAIL_PORT = '587'
+EMAIL_USE_TLS=True
+
+#when logout button is used below url is redirected
+LOGOUT_REDIRECT_URL='loginpage'
+LOGIN_URL='loginpage'
+# Looking to send emails in production? Check out our Email API/SMTP product!

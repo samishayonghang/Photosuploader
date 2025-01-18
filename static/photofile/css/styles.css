@@ -184,3 +184,17 @@ button[type="submit"]:hover {
     }
 }
 }
+
+.uploaded-images {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.uploaded-image {
+    margin-left: 20px;
+    border-radius: 10px;
+    /* Optional: Add a shadow for a better visual appearance */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
